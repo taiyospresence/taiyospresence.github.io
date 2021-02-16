@@ -53,85 +53,103 @@
                   <div class="col-md-8 offset-md-2">
                      <form name="paymentform" action="" method="post">
                         <div class="form-group custom-input-group">
-                           <label for="username">Email Address </label>
-                           <input type="text" name="email" class="form-control"
+                           <label for="email">Email Address </label>
+                           <input type="text" class="form-control" id="email" name="email"
                               placeholder="example@gmail.com" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}"
                               title="Your email should be in the format of example@gmail.com." autocomplete="email">
                         </div>
                         <div class="form-group custom-input-group">
                            <label for="password">Create Password</label>
-                           <input type="password" class="form-control" placeholder="***************" name="password"
-                              pattern="(?=.*\d)(?=.*[a-z]).{8,}"
+                           <input type="password" class="form-control" placeholder="***************" id="password"
+                              name="password" autocomplete="password"
                               title="Use password length of 8-15 with letters and numbers only." maxlength="15"
                               required>
                         </div>
                         <div class="row">
                            <div class="col-12">
-                              <div class="form-group custom-input-group">
-                                 <label for="nameOnCard">Card Holder's Name</label>
-                                 <input type="text" class="form-control" placeholder="Jhon" name="name" required
-                                    pattern="[a-zA-Z '-]+" title="Please use letters only." autocomplete="cc-name">
-                              </div>
-                           </div>
-                           <div class="col-12">
-                              <div class="form-group custom-input-group">
-                                 <label for="cardNumber">Card Number</label>
-                                 <input type="text" maxlength="19" id="cardNumber" class="form-control card-main-number"
-                                    placeholder="0000 0000 0000 0000" name="cardNumber" required pattern="[a-zA-Z '-]+"
-                                    title="Please use letters only." value="" autocomplete="cc-number">
-                                 <img src="./img/mastercard.png" alt="" class="img-fluid click-image">
+                              <div class="border-wrapper no-border" id="marge-input">
+                                 <div class="marge-input">
+
+                                    <div class="custom-input-group marge-one no-border">
+                                       <label for="cardNumber" class="no-border">Card Number</label>
+                                       <input onkeyup="movetoNext(this, 'expireDate')" size="20" type="text"
+                                          maxlength="19" id="cardNumber" class="form-control card-main-number no-border"
+                                          placeholder="0000 0000 0000 0000" name="cc-number" required
+                                          title="Please use letters only." autocomplete="cc-number" value="">
+                                       <img src="./img/mastercard.png" alt="" class="img-fluid click-image no-border">
+                                    </div>
+                                    <div class="card-outer d-none no-border">
+                                       <div class="card-wrapper no-border">
+                                          <img src="./img/mastercard2.png" alt="" class="img-fluid no-border">
+                                          <div class="card-details no-border">
+                                             <p class="no-border">Mastercard</p>
+                                             <p class="last-para no-border">Expires 12/23</p>
+                                          </div>
+                                          <div class="card-number no-border">
+                                             <p class="card-number-para no-border">1111 2222 3333 6568</p>
+                                          </div>
+                                       </div>
+                                       <hr>
+                                       <div class="manage no-border">
+                                          <a href="#">Manage Cards</a>
+                                       </div>
+                                    </div>
+                                    <div class="custom-input-group marge-two no-border">
+                                       <label for="expireDate" class="no-border">Exp date</label>
+                                       <input onkeyup="movetoNext(this, 'securityCode')" size="6" type="text"
+                                          class="form-control no-border" placeholder="MM/YY" name="cc-exp"
+                                          id="expireDate" maxlength="5" required autocomplete="cc-exp"
+                                          title="Please use a Expiration date.">
+                                    </div>
+                                    <div class="form-group custom-input-group marge-three no-border">
+                                       <label for="securityCode" class="no-border">Sec code</label>
+                                       <input type="text" name="sec" maxlength="3" class="form-control no-border"
+                                          placeholder="000" id="securityCode" maxlength="3" required autocomplete="sec"
+                                          title="Please use a valid Security Code.">
+                                    </div>
+                                    <div class="tooltip-custom d-none no-border">
+                                       <p class="no-border">The security code is 3 digits after the card number on its
+                                          back.</p>
+                                    </div>
+
+                                 </div>
+                                 <hr class="m-0">
+                                 <div class="safe-secure text-center">
+                                    <div class="safe-head mb-2 mt-3">
+                                       <img src="./img/lock.png" class="img-fluid" alt="">
+                                       <p class="mb-0 mx-3 py-3 safe-para">Guaranteed <b>Safe & Secure</b> Checkout</p>
+                                       <button class="btn btn-stripe"><img src="./img/Vector.png" alt=""></button>
+                                    </div>
+                                    <div class="safe-body mb-4">
+                                       <a href="#" class="credit-card mr-3">
+                                          <img src="./img/Visa.png" class="img-fluid" alt="">
+                                       </a>
+                                       <a href="#" class="credit-card mr-3">
+                                          <img src="./img/mastercard2.png" class="img-fluid" alt="">
+                                       </a>
+                                       <a href="#" class="credit-card mr-3">
+                                          <img src="./img/Am ex.png" class="img-fluid" alt="">
+                                       </a>
+                                       <a href="#" class="credit-card mr-3">
+                                          <img src="./img/Discover.png" class="img-fluid" alt="">
+                                       </a>
+                                       <a href="#" class="credit-card mr-3">
+                                          <img src="./img/Visa (1).png" class="img-fluid" alt="">
+                                       </a>
+                                    </div>
+                                 </div>
                               </div>
                               <p class="error-msg d-none">The card number must be 12-19 digits long.</p>
-                              <div class="card-outer d-none">
-                                 <div class="card-wrapper">
-                                    <img src="./img/mastercard2.png" alt="" class="img-fluid">
-                                    <div class="card-details">
-                                       <p>Mastercard</p>
-                                       <p class="last-para">Expires 12/23</p>
-                                    </div>
-                                    <div class="card-number">
-                                       <p>**** **** **** 6568</p>
-                                    </div>
-                                 </div>
-                                 <hr>
-                                 <div class="manage">
-                                    <a href="#">Manage Cards</a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="row">
-                           <div class="col">
-                              <div class="form-group custom-input-group">
-                                 <label for="expireDate">Expiration date</label>
-                                 <input type="text" class="form-control" placeholder="MM/YY" name="expireDate"
-                                    maxlength="16" required pattern="[\d]{15,}" title="Please use a Expiration date.">
-                              </div>
-                           </div>
-                           <div class="col position-relative">
-                              <button class="btn popover-btn">
-                                 <img src="./img/info.png" alt="">
-                              </button>
-                              <div class="form-group custom-input-group">
-                                 <label for="securityCode">Security code</label>
-                                 <input type="text" class="form-control" placeholder="000" name="securityCode"
-                                    maxlength="16" required pattern="[\d]{15,}"
-                                    title="Please use a valid Security Code.">
-                              </div>
-                              <div class="tooltip-custom d-none">
-                                 <p>The security code is 3 digits after the card number on its back.</p>
-                              </div>
                            </div>
                         </div>
                         <div class="row">
                            <div class="col-12">
-                              <div class="form-group form-check">
-                                 <input type="checkbox" class="form-check-input mr-2" name="userConsent" value="checked"
-                                    required>
-                                 <label class="form-check-label custom-label" for="userConsent">Remember my card for
-                                    next purchases.</label>
+                              <div class="form-group custom-input-group">
+                                 <label for="nameOnCard">Card Holder's Name</label>
+                                 <input type="text" class="form-control" placeholder="Jhon" id="nameOnCard"
+                                    name="cc-name" required pattern="[a-zA-Z '-]+" autocomplete="cc-name"
+                                    title="Please use letters only." value="">
                               </div>
-                              <hr>
                            </div>
                            <div class="col-12">
                               <p class="p-0 mb-2 address-para">Is your home address the same as your billing address?
@@ -157,16 +175,17 @@
                               <div class="form-group custom-input-group">
                                  <label for="billingStreet">Billing Street</label>
                                  <input type="text" class="form-control" placeholder="Billing Address"
-                                    name="billingStreet" maxlength="16" required pattern="[\d]{15,}"
-                                    title="Please use a valid Billing Address.">
+                                    name="ship-address" maxlength="16" required
+                                    title="Please use a valid Billing Address."
+                                    autocapitalize="shipping street-address">
                               </div>
                            </div>
                            <div class="col-6 one">
                               <div class="form-group custom-input-group">
                                  <label for="billingCity">Billing Town/City</label>
-                                 <input type="text" class="form-control" placeholder="Town/City" name="billingCity"
-                                    maxlength="16" required pattern="[\d]{15,}"
-                                    title="Please use a valid Billing City.">
+                                 <input type="text" class="form-control" placeholder="Town/City" name="ship-city"
+                                    maxlength="16" required title="Please use a valid Billing City."
+                                    autocomplete="shipping locality">
                               </div>
                            </div>
                            <div class="col-6 one">
@@ -183,8 +202,9 @@
                            <div class="col-6 one">
                               <div class="form-group custom-input-group">
                                  <label for="billingZip">Billing Zip</label>
-                                 <input type="text" class="form-control" placeholder="00000" name="billingZip"
-                                    maxlength="16" required pattern="[\d]{15,}" title="Please use a valid Billing Zip.">
+                                 <input type="text" class="form-control" placeholder="00000" name="ship-zip"
+                                    maxlength="16" required title="Please use a valid Billing Zip."
+                                    autocomplete="shipping postal-code">
                               </div>
                            </div>
                            <div class="col-12">
