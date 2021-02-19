@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -54,13 +54,13 @@
                      <form name="paymentform" action="" method="post">
                         <div class="form-group custom-input-group">
                            <label for="email">Email Address </label>
-                           <input type="text" class="form-control" id="email" name="email"
+                           <input type="text" class="form-control w-100" id="email" name="email"
                               placeholder="example@gmail.com" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}"
                               title="Your email should be in the format of example@gmail.com." autocomplete="email">
                         </div>
                         <div class="form-group custom-input-group">
                            <label for="password">Create Password</label>
-                           <input type="password" class="form-control" placeholder="***************" id="password"
+                           <input type="password" class="form-control w-100" placeholder="***************" id="password"
                               name="password" autocomplete="password"
                               title="Use password length of 8-15 with letters and numbers only." maxlength="15"
                               required>
@@ -69,14 +69,19 @@
                            <div class="col-12">
                               <div class="border-wrapper no-border" id="marge-input">
                                  <div class="marge-input">
-
                                     <div class="custom-input-group marge-one no-border">
                                        <label for="cardNumber" class="no-border">Card Number</label>
-                                       <input onkeyup="movetoNext(this, 'expireDate')" size="20" type="text"
-                                          maxlength="19" id="cardNumber" class="form-control card-main-number no-border"
-                                          placeholder="0000 0000 0000 0000" name="cc-number" required
+                                       <input onkeyup="movetoNext(this, 'expireMMDate')" size="20" type="text"
+                                          maxlength="19" placeholder="0000 0000 0000 0000" id="cardNumber" class="form-control card-main-number no-border"
+                                          placeholder="" name="cc-number" required
                                           title="Please use the numbers only." autocomplete="cc-number" value="">
-                                       <img src="./img/mastercard.png" alt="" class="img-fluid click-image no-border">
+                                          <div class="card-icon-group">
+                                             <img id="masterIcon" src="./img/mastercard.png" alt="" class="img-fluid click-image no-border">
+                                             <img id="paypalIcon" src="./img/paypal1.png" alt="" class="img-fluid click-image no-border">
+                                             <img id="visaIcon" src="./img/visa1.png" alt="" class="img-fluid click-image no-border">
+                                             <img id="discoverIcon" src="./img/discover1.png" alt="" class="img-fluid click-image no-border">
+                                             <img id="amexIcon" src="./img/Amex1.png" alt="" class="img-fluid click-image no-border">
+                                          </div>
                                     </div>
                                     <div class="card-outer d-none no-border">
                                        <div class="card-wrapper no-border">
@@ -94,47 +99,56 @@
                                           <a href="#">Manage Cards</a>
                                        </div>
                                     </div>
-                                    <div class="custom-input-group marge-two no-border">
-                                       <label for="expireDate" class="no-border">Exp date</label>
-                                       <input onkeyup="movetoNext(this, 'securityCode')" size="6" type="text"
-                                          class="form-control no-border" placeholder="MM/YY" name="cc-exp"
-                                          id="expireDate" maxlength="5" required autocomplete="cc-exp"
-                                          title="Expiration date.">
-                                    </div>
-                                    <div class="form-group custom-input-group marge-three no-border">
-                                       <label for="securityCode" class="no-border">Sec code</label>
-                                       <input type="text" name="sec" maxlength="3" class="form-control no-border"
-                                          placeholder="000" id="securityCode" maxlength="3" required autocomplete="sec"
-                                          title="Security Code.">
-                                    </div>
-                                    <div class="tooltip-custom d-none no-border">
-                                       <p class="no-border">The security code is 3 digits after the card number on its
-                                          back.</p>
-                                    </div>
 
+                                    <hr class="m-0">
+                                    <div id="card_middle" style="display: flex;" class="d-none">
+                                       <div class="custom-input-group marge-two no-border">
+                                          <label for="expireDate" class="no-border">Exp date</label>
+                                          <input onkeyup="movetoYYNext(this, 'expireYYDate')" size="3" type="text"
+                                             class="form-control no-border" placeholder="MM" name="cc-exp"
+                                             id="expireMMDate" maxlength="2" required autocomplete="cc-exp"
+                                             title="Expiration date." value="">
+                                          <div class="mt-1 pt-4" style="color: #ccc; font-size: 12px;">/</div>
+                                          <input onkeyup="movetoSecNext(this, 'securityCode')" size="3" type="text"
+                                             class="form-control no-border" placeholder="YY" name="cc-exp"
+                                             id="expireYYDate" maxlength="2" required autocomplete="cc-exp"
+                                             title="Expiration date." value="">
+                                       </div>
+                                       <div class="form-group custom-input-group marge-three no-border">
+                                          <label for="securityCode" class="no-border">Sec code</label>
+                                          <input type="text" name="sec" maxlength="4" class="form-control no-border"
+                                             placeholder="000" id="securityCode" maxlength="3" required autocomplete="sec"
+                                             title="Security Code." value="">
+                                       </div>
+                                       <div class="tooltip-custom d-none no-border">
+                                          <p class="no-border">The security code is 3 digits after the card number on its
+                                             back.</p>
+                                       </div>
+                                    </div>
                                  </div>
                                  <hr class="m-0">
                                  <div class="safe-secure text-center">
                                     <div class="safe-head mb-2 mt-3">
                                        <img src="./img/lock.png" class="img-fluid" alt="">
                                        <p class="mb-0 mx-3 py-3 safe-para">Guaranteed <b>Safe & Secure</b> Checkout</p>
-                                       <button class="btn btn-stripe"><img src="./img/Vector.png" alt=""></button>
+                                       <!-- <button class="btn btn-stripe"><img src="./img/Vector.png" alt=""></button> -->
+                                       <img src="./img/Vetor-blue.png" alt="">
                                     </div>
                                     <div class="safe-body mb-4">
-                                       <a href="#" class="credit-card mr-3">
+                                       <a class="credit-card mr-3">
                                           <img src="./img/Visa.png" class="img-fluid" alt="">
                                        </a>
-                                       <a href="#" class="credit-card mr-3">
+                                       <a class="credit-card mr-3">
                                           <img src="./img/mastercard2.png" class="img-fluid" alt="">
                                        </a>
-                                       <a href="#" class="credit-card mr-3">
+                                       <a class="credit-card mr-3">
                                           <img src="./img/Am ex.png" class="img-fluid" alt="">
                                        </a>
-                                       <a href="#" class="credit-card mr-3">
+                                       <a class="credit-card mr-3">
                                           <img src="./img/Discover.png" class="img-fluid" alt="">
                                        </a>
-                                       <a href="#" class="credit-card mr-3">
-                                          <img src="./img/Visa (1).png" class="img-fluid" alt="">
+                                       <a class="credit-card mr-3">
+                                          <img src="./img/paypal.png" class="img-fluid" alt="">
                                        </a>
                                     </div>
                                  </div>
@@ -146,7 +160,7 @@
                            <div class="col-12">
                               <div class="form-group custom-input-group">
                                  <label for="nameOnCard">Card Holder's Name</label>
-                                 <input type="text" class="form-control" placeholder="Jhon" id="nameOnCard"
+                                 <input type="text" class="form-control w-100" placeholder="" id="nameOnCard"
                                     name="cc-name" required pattern="[a-zA-Z '-]+" autocomplete="cc-name"
                                     title="Please use letters only." value="">
                               </div>

@@ -47,9 +47,116 @@ $("input:radio").change(function () {
     $(".one").show();
   }
 });
+
+document.getElementById("expireMMDate").addEventListener("input", function (e) {
+  e.target.value = e.target.value
+    .replace(/[^\dA-Z]/g, "")
+    .trim();
+});
+
+document.getElementById("expireYYDate").addEventListener("input", function (e) {
+  e.target.value = e.target.value
+    .replace(/[^\dA-Z]/g, "")
+    .trim();
+});
+
+document.getElementById("securityCode").addEventListener("input", function (e) {
+  e.target.value = e.target.value
+    .replace(/[^\dA-Z]/g, "")
+    .trim();
+});
+
 function movetoNext(current, nextFieldID) {
+  console.log(current.value);
+  if(current.value.length >= 5)  {
+    document.getElementById("card_middle").classList.remove("d-none");
+  } else if(current.value.length < 5) {
+    document.getElementById("card_middle").classList.add("d-none");
+  }
+
+  if (current.value.slice(0, 1) == 4) {
+    document.getElementById("masterIcon").classList.add("display-transition");
+    document.getElementById("paypalIcon").classList.add("display-transition");
+    document.getElementById("discoverIcon").classList.add("display-transition");
+    document.getElementById("amexIcon").classList.add("display-transition");
+    document.getElementById("visaIcon").classList.add("display-transition-left-visa");
+  } else if (current.value.slice(0, 1) == 5) {
+    document.getElementById("masterIcon").classList.remove("display-transition");
+    document.getElementById("paypalIcon").classList.remove("display-transition");
+    document.getElementById("discoverIcon").classList.remove("display-transition");
+    document.getElementById("amexIcon").classList.remove("display-transition");
+    document.getElementById("visaIcon").classList.remove("display-transition-left-visa");
+
+    document.getElementById("masterIcon").classList.add("display-transition-left-master");
+    document.getElementById("paypalIcon").classList.add("display-transition");
+    document.getElementById("discoverIcon").classList.add("display-transition");
+    document.getElementById("amexIcon").classList.add("display-transition");
+    document.getElementById("visaIcon").classList.add("display-transition");
+  } else if (current.value.slice(0, 1) == 3) {
+    current.maxLength = 18;
+
+    document.getElementById("masterIcon").classList.remove("display-transition-left-master");
+    document.getElementById("paypalIcon").classList.remove("display-transition");
+    document.getElementById("discoverIcon").classList.remove("display-transition");
+    document.getElementById("amexIcon").classList.remove("display-transition");
+    document.getElementById("visaIcon").classList.remove("display-transition");
+
+    document.getElementById("masterIcon").classList.add("display-transition");
+    document.getElementById("paypalIcon").classList.add("display-transition");
+    document.getElementById("discoverIcon").classList.add("display-transition");
+    document.getElementById("amexIcon").classList.add("display-transition-left-amex");
+    document.getElementById("visaIcon").classList.add("display-transition");
+
+    document.getElementById("securityCode").placeholder = "0000";
+    document.getElementById("securityCode").maxLength = 4;
+  } else {
+    current.maxLength = 19;
+
+    document.getElementById("masterIcon").classList.remove("display-transition");
+    document.getElementById("paypalIcon").classList.remove("display-transition");
+    document.getElementById("discoverIcon").classList.remove("display-transition");
+    document.getElementById("amexIcon").classList.remove("display-transition");
+    document.getElementById("visaIcon").classList.remove("display-transition");
+
+    document.getElementById("amexIcon").classList.remove("display-transition-left-amex");
+    document.getElementById("visaIcon").classList.remove("display-transition-left-visa");
+    document.getElementById("discoverIcon").classList.remove("display-transition-left-discover");
+    document.getElementById("paypalIcon").classList.remove("display-transition-left-paypal");
+    document.getElementById("masterIcon").classList.remove("display-transition-left-master");
+
+    document.getElementById("securityCode").placeholder = "000";
+    document.getElementById("securityCode").maxLength = 3;
+  }
   if (current.value.length >= current.maxLength) {
     document.getElementById(nextFieldID).focus();
+  }
+}
+
+function movetoYYNext(current, nextFieldID) {
+  if (current.value.length >= current.maxLength) {
+    document.getElementById(nextFieldID).focus();
+  }
+  if (current.value > 12) {
+    document.getElementById("expireMMDate").style.borderBottom =
+      "1px solid red";
+  } else if (current.value <= 12) {
+    document.getElementById("expireMMDate").style.borderBottom = "unset";
+  }
+}
+
+function movetoSecNext(current, nextFieldID) {
+  if (current.value.length >= current.maxLength) {
+    document.getElementById(nextFieldID).focus();
+  }
+  console.log(current.value.length);
+  if (current.value < 21) {
+    document.getElementById("expireYYDate").style.borderBottom =
+      "1px solid red";
+  } else if (current.value >= 21) {
+    document.getElementById("expireYYDate").style.borderBottom = "unset";
+  }
+  if(current.value.length == 0) {
+    document.getElementById("expireYYDate").style.borderBottom = "unset";
   }
 }
 
