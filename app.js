@@ -1,3 +1,6 @@
+window.onload = function() {
+  document.getElementById("email").focus();
+}
 $(".click-image").on("click", function () {
   $(".card-outer").toggleClass("d-none");
 });
@@ -8,7 +11,8 @@ $("#myBtn").click(function () {
   const margeInp = $(".marge-input");
   console.log(inpVal.length);
   if (inpVal.length > 12 && inpVal.length <= 19) {
-    console.log("valid");
+    // document.getElementById("myBtn").style.background = "grey";
+    document.getElementById("myBtn").disabled = "true";
   } else {
     margeInp.addClass("error");
     err.toggleClass("d-none");
