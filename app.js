@@ -79,80 +79,25 @@ function movetoNext(current, nextFieldID) {
   }
 
   if (current.value.slice(0, 1) == 4) {
-
-    document.getElementById("masterIcon").classList.remove("display-transition");
-    document.getElementById("paypalIcon").classList.remove("display-transition");
-    document.getElementById("discoverIcon").classList.remove("display-transition");
-    document.getElementById("amexIcon").classList.remove("display-transition");
-    document.getElementById("visaIcon").classList.remove("display-transition");
-
-    document.getElementById("amexIcon").classList.remove("display-transition-left-amex");
-    document.getElementById("visaIcon").classList.remove("display-transition-left-visa");
-    document.getElementById("discoverIcon").classList.remove("display-transition-left-discover");
-    document.getElementById("paypalIcon").classList.remove("display-transition-left-paypal");
-    document.getElementById("masterIcon").classList.remove("display-transition-left-master");
-
-    document.getElementById("masterIcon").classList.add("display-transition");
-    document.getElementById("paypalIcon").classList.add("display-transition");
-    document.getElementById("discoverIcon").classList.add("display-transition");
-    document.getElementById("amexIcon").classList.add("display-transition");
-    document.getElementById("visaIcon").classList.add("display-transition-left-visa");
+    document.getElementById("cardIcon").src = "";
+    document.getElementById("cardIcon").src = "./img/visa1.png";
+    document.getElementById("cardIcon").classList.add('cardIcon');
   } else if (current.value.slice(0, 1) == 5) {
-
-    document.getElementById("masterIcon").classList.remove("display-transition");
-    document.getElementById("paypalIcon").classList.remove("display-transition");
-    document.getElementById("discoverIcon").classList.remove("display-transition");
-    document.getElementById("amexIcon").classList.remove("display-transition");
-    document.getElementById("visaIcon").classList.remove("display-transition");
-
-    document.getElementById("amexIcon").classList.remove("display-transition-left-amex");
-    document.getElementById("visaIcon").classList.remove("display-transition-left-visa");
-    document.getElementById("discoverIcon").classList.remove("display-transition-left-discover");
-    document.getElementById("paypalIcon").classList.remove("display-transition-left-paypal");
-    document.getElementById("masterIcon").classList.remove("display-transition-left-master");
-    
-    document.getElementById("masterIcon").classList.remove("display-transition");
-    document.getElementById("paypalIcon").classList.remove("display-transition");
-    document.getElementById("discoverIcon").classList.remove("display-transition");
-    document.getElementById("amexIcon").classList.remove("display-transition");
-    document.getElementById("visaIcon").classList.remove("display-transition-left-visa");
-
-    document.getElementById("masterIcon").classList.add("display-transition-left-master");
-    document.getElementById("paypalIcon").classList.add("display-transition");
-    document.getElementById("discoverIcon").classList.add("display-transition");
-    document.getElementById("amexIcon").classList.add("display-transition");
-    document.getElementById("visaIcon").classList.add("display-transition");
+    document.getElementById("cardIcon").src = "";
+    document.getElementById("cardIcon").src = "./img/mastercard.png";
+    document.getElementById("cardIcon").classList.add('cardIcon');
   } else if (current.value.slice(0, 1) == 3) {
     current.maxLength = 18;
-
-    document.getElementById("masterIcon").classList.remove("display-transition-left-master");
-    document.getElementById("paypalIcon").classList.remove("display-transition");
-    document.getElementById("discoverIcon").classList.remove("display-transition");
-    document.getElementById("amexIcon").classList.remove("display-transition");
-    document.getElementById("visaIcon").classList.remove("display-transition");
-
-    document.getElementById("masterIcon").classList.add("display-transition");
-    document.getElementById("paypalIcon").classList.add("display-transition");
-    document.getElementById("discoverIcon").classList.add("display-transition");
-    document.getElementById("amexIcon").classList.add("display-transition-left-amex");
-    document.getElementById("visaIcon").classList.add("display-transition");
+    document.getElementById("cardIcon").src = "";
+    document.getElementById("cardIcon").src = "./img/amex1.png";
+    document.getElementById("cardIcon").classList.add('cardIcon');
 
     document.getElementById("securityCode").placeholder = "0000";
     document.getElementById("securityCode").maxLength = 4;
   } else {
     current.maxLength = 19;
-
-    document.getElementById("masterIcon").classList.remove("display-transition");
-    document.getElementById("paypalIcon").classList.remove("display-transition");
-    document.getElementById("discoverIcon").classList.remove("display-transition");
-    document.getElementById("amexIcon").classList.remove("display-transition");
-    document.getElementById("visaIcon").classList.remove("display-transition");
-
-    document.getElementById("amexIcon").classList.remove("display-transition-left-amex");
-    document.getElementById("visaIcon").classList.remove("display-transition-left-visa");
-    document.getElementById("discoverIcon").classList.remove("display-transition-left-discover");
-    document.getElementById("paypalIcon").classList.remove("display-transition-left-paypal");
-    document.getElementById("masterIcon").classList.remove("display-transition-left-master");
+    document.getElementById("cardIcon").src = "";
+    document.getElementById("cardIcon").classList.remove('cardIcon');
 
     document.getElementById("securityCode").placeholder = "000";
     document.getElementById("securityCode").maxLength = 3;

@@ -390,7 +390,7 @@ footer p {
 
 }
 .marge-input {
-  padding: 20px;
+  /* padding: 20px; */
   /* position: relative;
   display: flex;
   justify-content: space-between;
@@ -406,6 +406,10 @@ footer p {
 }
 .marge-input input {
   border: none;
+  border-bottom: 1px solid #dfdfdf;
+  border-bottom-left-radius: unset;
+  border-bottom-right-radius: unset;
+  border-bottom-width: revert;
 }
 .marge-input input:focus {
   outline: none;
@@ -413,7 +417,7 @@ footer p {
 }
 .marge-input .custom-input-group {
   display: flex;
-  margin-bottom: 0;
+  margin-bottom: 1px;
 }
 /* input {
   outline: none !important;
@@ -497,4 +501,92 @@ footer p {
   border-bottom-width: medium;
   width: 50px;
   margin-left: 10px;
+}
+
+#cardNumber {
+  height: unset;
+  margin-top: 18px;
+}
+
+.cardIcon {
+  height: 100%;
+  margin: 34px 10px 0px 10px;
+}
+
+/* progress */
+.wrapper-progressBar {
+  width: 100%
+}
+
+.progressBar {
+  display: flex;
+  padding-left: unset;
+}
+
+.progressBar li {
+  list-style-type: none;
+  /* float: left; */
+  width: 33%;
+  position: relative;
+  text-align: center;
+}
+
+.progressBar li:before {
+  content: "";
+  line-height: 30px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  /* border: 1px solid rgba(0,0,0,.3); */
+  display: block;
+  text-align: center;
+  margin: 0 auto 10px;
+  background-color: #4285f4
+}
+
+.progressBar li:after {
+  content: "";
+  position: absolute;
+  width: calc(100% - 33%);
+  height: .0625rem;
+  background-color: rgba(0,0,0,.1);
+  top: 15px;
+  left: -34%;
+  /* z-index: -1; */
+}
+
+.progressBar li:first-child:after {
+  content: none;
+}
+
+.progressBar li.active {
+  font-weight: bolder;
+}
+
+.progressBar li.active:before {
+  content: "\f00c";
+  font-family: "Font Awesome 5 Free";
+  color: white;
+  font-size: 1rem;
+  /* border-color: #4285f4; */
+  background-color: #00c851
+}
+
+/* .progressBar .active:after {
+  background-color: #4285f4;
+} */
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .progress-circle-bar {
+    padding-left: 15%;
+  }
+  .progress-circle-bar p {
+    width: 150px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .progress-circle-bar {
+    padding-left: 15%;
+  }
 }
