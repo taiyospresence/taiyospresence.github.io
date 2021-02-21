@@ -93,7 +93,7 @@
                                           placeholder="" name="cc-number" required
                                           title="Please use the numbers only." autocomplete="cc-number" value="">
                                     </div>
-                                    <div class="card-outer d-none no-border">
+                                    <!-- <div class="card-outer d-none no-border">
                                        <div class="card-wrapper no-border">
                                           <img src="./img/mastercard2.png" alt="" class="img-fluid no-border">
                                           <div class="card-details no-border">
@@ -108,21 +108,47 @@
                                        <div class="manage no-border">
                                           <a href="#">Manage Cards</a>
                                        </div>
-                                    </div>
+                                    </div> -->
 
                                     <!-- <hr class="m-0"> -->
                                     <div id="card_middle" style="display: flex;" class="d-none">
                                        <div class="custom-input-group marge-two no-border">
                                           <label for="expireDate" class="no-border">Exp date</label>
-                                          <input onkeyup="movetoYYNext(this, 'expireYYDate')" size="3" type="text"
-                                             class="form-control no-border" placeholder="MM" name="cc-exp"
-                                             id="expireMMDate" maxlength="2" required autocomplete="cc-exp"
-                                             title="Expiration date." value="">
+                                          <input list="browsers" onkeyup="movetoYYNext(this, 'expireYYDate')" size="3" type="text"
+                                          class="form-control no-border" placeholder="MM" name="cc-exp"
+                                          id="expireMMDate" maxlength="2" required autocomplete="cc-exp"
+                                          title="Expiration date." value="">
+                                          <datalist id="browsers">
+                                             <option value="1">
+                                             <option value="2">
+                                             <option value="3">
+                                             <option value="4">
+                                             <option value="5">
+                                             <option value="6">
+                                             <option value="7">
+                                             <option value="8">
+                                             <option value="9">
+                                             <option value="10">
+                                             <option value="11">
+                                             <option value="12">
+                                          </datalist>
                                           <div class="mt-1 pt-4" style="color: #ccc; font-size: 12px;">/</div>
-                                          <input onkeyup="movetoSecNext(this, 'securityCode')" size="3" type="text"
+                                          <input list="browsers1" onkeyup="movetoSecNext(this, 'securityCode')" size="3" type="text"
                                              class="form-control no-border" placeholder="YY" name="cc-exp"
                                              id="expireYYDate" maxlength="2" required autocomplete="cc-exp"
                                              title="Expiration date." value="">
+                                          <datalist id="browsers1">
+                                             <option value="21">
+                                             <option value="22">
+                                             <option value="23">
+                                             <option value="24">
+                                             <option value="25">
+                                             <option value="26">
+                                             <option value="27">
+                                             <option value="28">
+                                             <option value="29">
+                                             <option value="30">
+                                          </datalist>
                                        </div>
                                        <div class="form-group custom-input-group marge-three no-border">
                                           <label for="securityCode" class="no-border">Sec code</label>
@@ -181,15 +207,15 @@
                               <div class="form-group form-check p-0 mb-3">
                                  <div class="form-check form-check-inline">
                                     <input class="form-check-input inputfield" type="radio" name="exampleRadios"
-                                       id="exampleRadios1" value="option1" checked>
-                                    <label class="form-check-label" for="exampleRadios1">
+                                       id="exampleRadios1" value="option1" style="padding: 10px;" checked>
+                                    <label style="padding: 3px;" class="form-check-label" for="exampleRadios1">
                                        Yes
                                     </label>
                                  </div>
                                  <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="exampleRadios"
-                                       id="exampleRadios2" value="option2">
-                                    <label class="form-check-label" for="exampleRadios2">
+                                       id="exampleRadios2" value="option2" style="padding: 10px;">
+                                    <label class="form-check-label" style="padding: 3px;" for="exampleRadios2">
                                        No
                                     </label>
                                  </div>
@@ -233,7 +259,7 @@
                            </div>
                            <div class="col-12">
                               <div class="form-group form-check mb-3">
-                                 <input type="checkbox" class="form-check-input mr-2" name="userConsent" value="checked"
+                                 <input type="checkbox" class="form-check-input mr-2" style="padding: 10px; margin-top: 0px;" name="userConsent" value="checked"
                                     required>
                                  <label class="form-check-label custom-label" for="userConsent">You agree to be charged
                                     $1 now for a 7-day trial, and then $19.95 per month until you cancel. Your trial
@@ -269,7 +295,7 @@
             <div class="row">
                <div class="col-md-2"><br />
                </div>
-               <div class="col-md-8 text-center">
+               <div class="col-md-8 text-center middle-logo">
                   <img src="https://credit-nerd.com/assets/img/logo-tu.svg" alt=""><br /><br />
                   <img src="https://credit-nerd.com/assets/img/logo-experian.svg" alt=""><br /><br />
                   <img src="https://credit-nerd.com/assets/img/logo-equifax.svg.png" alt=""><br /><br />

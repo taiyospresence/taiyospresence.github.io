@@ -590,3 +590,9 @@ footer p {
     padding-left: 15%;
   }
 }
+
+@media screen and (max-width: 376px) {
+  .middle-logo img {
+    width: 230px;
+  }
+}
