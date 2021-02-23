@@ -635,6 +635,10 @@ footer p {
     margin-left: 10px;
 }
 
+/* .middle-logo img {
+    padding: 10px 0px;
+} */
+
 
 /* progress */
 
@@ -716,8 +720,8 @@ footer p {
     }
 }
 
-@media screen and (max-width: 376px) {
+@media screen and (max-width: 415px) {
     .middle-logo img {
-        width: 230px;
+        width: 150px;
     }
 }
