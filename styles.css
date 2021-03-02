@@ -700,11 +700,6 @@ footer p {
     background-color: #00c851
 }
 
-
-/* .progressBar .active:after {
-  background-color: #4285f4;
-} */
-
 @media screen and (min-width: 768px) and (max-width: 1023px) {
     .progress-circle-bar {
         padding-left: 15%;
