@@ -14,7 +14,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 </head>
-<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<body style="background-color: gainsboro;">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
@@ -29,12 +30,12 @@
          </span>
         </div>
     </div>
-</nav> -->
+</nav>
 <div class="container">
     <section id="main">
         <!-- <h3 class="title bold text-center">See your Free Credit Score & $1 Credit Report in minutes</h3> -->
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-8" style="margin: 0 auto;">
                 <div class="card">
                     <div class="card-body">
                         <div class="col-md-12 d-flex progress-circle-bar">
@@ -87,17 +88,20 @@
                                 </div>
                                 <h3 class="text-center border-bottom mt-3">Verification Information</h3>
                                 <div class="form-group mt-2">
-                                    <label for="securitynumber">Social Security Number</label>
-                                    <input type="text" class="form-control pt-3 pb-3" maxlength="5" placeholder="00000" id="securitynumber" name="securitynumber" autocomplete="securitynumber" title="Please use a valid social security number." required>
+                                    <label for="securitynumber">Last 4 digits of SSN</label>
+                                    <input type="text" style="width: 90px !important;" class="form-control pt-3 pb-3" maxlength="5" placeholder="1234" id="securitynumber" name="securitynumber" autocomplete="securitynumber" title="Please use a valid social security number." required>
                                 </div>
-                                <h6 class="bold mt-2">Date of birthday</h6>
-                                <div class="row">
+                                <h6 class="bold mt-2">Date of birth</h6>
+                                <div class="form-group row" style="padding: .75rem;">
+                                    <input class="form-control pt-3 pb-3" type="date" value="2011-08-19" id="example-date-input">
+                                </div>
+                                <!-- <div class="row">
                                     <div class="col-md-2 month">
                                         <div class="form-group">
                                             <label for="month">Month</label>
                                             <select class="w-100 form-select pt-3 pb-3" id="month" aria-label="Default select example" required>
                                             </select>
-                                            <!-- <input type="text" class="form-control pt-3 pb-3" maxlength="2" placeholder="00" id="month" name="month" autocomplete="month" title="Please use a valid address." required> -->
+                                            <input type="text" class="form-control pt-3 pb-3" maxlength="2" placeholder="00" id="month" name="month" autocomplete="month" title="Please use a valid address." required>
                                         </div>
                                     </div>
                                     <div class="col-md-2 day">
@@ -105,7 +109,7 @@
                                             <label for="day">Day</label>
                                             <select class="w-100 form-select pt-3 pb-3" id="day" aria-label="Default select example" required>
                                             </select>
-                                            <!-- <input type="text" class="form-control w-100 pt-3 pb-3" maxlength="2" placeholder="00" id="day" name="day" autocomplete="day" title="Please use a valid address." required> -->
+                                            <input type="text" class="form-control w-100 pt-3 pb-3" maxlength="2" placeholder="00" id="day" name="day" autocomplete="day" title="Please use a valid address." required>
                                         </div>
                                     </div>
                                     <div class="col-md-4 year">
@@ -113,10 +117,10 @@
                                             <label for="year">Year</label>
                                             <select class="w-100 form-select pt-3 pb-3" id="year" aria-label="Default select example" required>
                                             </select>
-                                            <!-- <input type="text" class="form-control w-100 pt-3 pb-3" maxlength="4" placeholder="0000" id="year" name="year" autocomplete="year" title="Please use a valid address." required> -->
+                                            <input type="text" class="form-control w-100 pt-3 pb-3" maxlength="4" placeholder="0000" id="year" name="year" autocomplete="year" title="Please use a valid address." required>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="row mt-3" style="padding: .75rem;">
                                     <button type="submit" id="myBtn" class="btn text-white btn-lg btn-custom btn-block mb-2 bold">Next</button>
                                 </div>
@@ -127,6 +131,56 @@
                                 <div class="mt-4">
                                     <p class="p-0 mb-2 address-para">I acknowledge that I have read the Terms of Service and Privacy Notice, and that I agree to their terms. I understand that the Terms of Service contain an Arbitration Clause.</p>
                                     <p class="p-0 mb-2 address-para">By clicking on the “Submit & Continue” button below, you are providing written instructions to TransUnion Interactive, Inc. authorizing TransUnion Interactive, Inc. to obtain and use, on a recurring basis with your membership, personal information you provide during the enrollment process, as well as information from your credit profiles at TransUnion, Experian and/or Equifax®, to confirm your identity, display your credit data to you and provide you with personalized offers from TransUnion’s partners that are based on your personal information and credit profiles.</p>
+                                </div><div class="alert alert-success text-center" role="alert">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <img src="https://credit-nerd.com/assets/img/CreditNerd_LOCK.png">
+                                        </div>
+                                        <div class="col-md-9 text-vert-center">
+                                            <h5 class="text-left bold" style="margin-right: 126px;">Safe & Secure</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2"><br />
+                                    </div>
+                                    <div class="col-md-8 text-center middle-logo">
+                                        <img src="https://credit-nerd.com/assets/img/logo-tu.svg" alt=""><br /><br />
+                                        <img src="https://credit-nerd.com/assets/img/logo-experian.svg" alt=""><br /><br />
+                                        <img src="https://credit-nerd.com/assets/img/logo-equifax.svg.png" alt=""><br /><br />
+                                    </div>
+                                    <div class="col-md-2"><br />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2 text-center">
+                                        <img src="https://credit-nerd.com/assets/img/CreditNerd_check_shield.png">
+                                    </div>
+                                    <div class="col-md-10">
+                                        <h4>What You Need To Know</h4>
+                                        <p class="text-small">There are various types of credit scores, and lenders use a variety of different types of credit scores to make lending decisions. The credit score you receive is based on the VantageScore 3.0 model and may not be the credit score
+                                            model used by your lender.</p>
+                                        <p class="text-small"><b>Credit Monitoring for $1 for a 7-day trial, then $19.95/month (plus tax where
+                                        applicable).</b></p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>
+                                            <span class="bold text-green">You'll soon enjoy:</span><br>
+                                            <ul class="ul-no-padd text-small">
+                                                <li>UNLIMITED Score & Report access — updates available daily</li>
+                                                <li>CreditCompass™, which helps you point your score in the right direction</li>
+                                                <li>Email updates of critical changes for ALL 3 bureaus</li>
+                                                <li>INSTANT email alerts sent as soon as TransUnion finds out someone’s applied for credit in your name
+                                                </li>
+                                                <li>Lock and Unlock your TransUnion and Equifax® Credit Reports</li>
+                                                <li>Personalized Debt Analysis & Credit Score Trending</li>
+                                                <li>UNLIMITED toll-free access to ID theft specialists</li>
+                                                <li>Up to $1,000,000 ID theft insurance</li>
+                                            </ul>
+                                        </p>
+                                    </div>
                                 </div>
                                 <!-- <div class="row">
                                     <div class="col-12">
@@ -289,7 +343,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 left-section">
+            <!-- <div class="col-md-4 left-section"> -->
                 <!-- <div class="alert alert-success text-center" role="alert">
                     <div class="row">
                         <div class="col-md-3">
@@ -299,8 +353,8 @@
                             <h5 class="text-left bold">Safe & Secure</h5>
                         </div>
                     </div>
-                </div> -->
-                <!-- <div class="row">
+                </div>
+                <div class="row">
                     <div class="col-md-2"><br />
                     </div>
                     <div class="col-md-8 text-center middle-logo">
@@ -310,7 +364,7 @@
                     </div>
                     <div class="col-md-2"><br />
                     </div>
-                </div> -->
+                </div>
                 <div class="row">
                     <div class="col-md-2 text-center">
                         <img src="https://credit-nerd.com/assets/img/CreditNerd_check_shield.png">
@@ -340,8 +394,8 @@
                             </ul>
                         </p>
                     </div>
-                </div>
-            </div>
+                </div> -->
+            <!-- </div> -->
         </div>
     </section>
 </div>
