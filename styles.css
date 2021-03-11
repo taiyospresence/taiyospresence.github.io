@@ -496,9 +496,17 @@ footer p {
 } */
 
 
-/* input:focus {
-  box-shadow: none !important;
-} */
+input:focus {
+    border-color: #f8931d !important;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #f8931d !important;
+    outline: 0 none !important;
+}
+
+select:focus {
+    border-color: #f8931d !important;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #f8931d !important;
+    outline: 0 none !important;
+}
 
 .credit-card img {
     width: 46px;
@@ -700,6 +708,14 @@ footer p {
     background-color: #00c851
 }
 
+#securitynumber, #unitnumber {
+    width: 50%;
+}
+
+.border-color {
+    border: 1px solid red;
+}
+
 @media screen and (min-width: 768px) and (max-width: 1023px) {
     .progress-circle-bar {
         padding-left: 15%;
@@ -718,5 +734,27 @@ footer p {
 @media screen and (max-width: 415px) {
     .middle-logo img {
         width: 150px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .left-section {
+        display: none;
+    }
+
+    #securitynumber, #unitnumber {
+        width: 90px !important;
+    }
+
+    .month {
+        width: 25% !important;
+    }
+
+    .day {
+        width: 25% !important;
+    }
+
+    .year {
+        width: 50% !important;
     }
 }

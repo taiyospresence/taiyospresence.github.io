@@ -1,5 +1,5 @@
 window.onload = function() {
-  document.getElementById("email").focus();
+  document.getElementById("fname").focus();
 }
 $(".click-image").on("click", function () {
   $(".card-outer").toggleClass("d-none");
@@ -38,14 +38,93 @@ $(document).ready(function () {
   $(".popover-btn").hover(function () {
     $(".tooltip-custom").toggleClass("d-none");
   });
+  const monthNames = ["1", "2", "3", "4", "5", "6",
+    "7", "8", "9", "10", "11", "12"
+  ];
+  let qntYears = 4;
+  let selectYear = $("#year");
+  let selectMonth = $("#month");
+  let selectDay = $("#day");
+  let currentYear = new Date().getFullYear();
+
+  for (var y = 0; y < qntYears; y++) {
+    let date = new Date(currentYear);
+    let yearElem = document.createElement("option");
+    yearElem.value = currentYear
+    yearElem.textContent = currentYear;
+    selectYear.append(yearElem);
+    currentYear--;
+  }
+
+  for (var m = 0; m < 12; m++) {
+    let month = monthNames[m];
+    let monthElem = document.createElement("option");
+    monthElem.value = m;
+    monthElem.textContent = month;
+    selectMonth.append(monthElem);
+  }
+
+  var d = new Date();
+  var month = d.getMonth();
+  var year = d.getFullYear();
+  var day = d.getDate();
+
+  selectYear.val(year);
+  selectYear.on("change", AdjustDays);
+  selectMonth.val(month);
+  selectMonth.on("change", AdjustDays);
+
+  AdjustDays();
+  selectDay.val(day)
+
+  function AdjustDays() {
+    var year = selectYear.val();
+    var month = parseInt(selectMonth.val()) + 1;
+    selectDay.empty();
+
+    //get the last day, so the number of days in that month
+    var days = new Date(year, month, 0).getDate();
+
+    //lets create the days of that month
+    for (var d = 1; d <= days; d++) {
+      var dayElem = document.createElement("option");
+      dayElem.value = d;
+      dayElem.textContent = d;
+      selectDay.append(dayElem);
+    }
+  }
 });
 
-document.getElementById("cardNumber").addEventListener("input", function (e) {
+document.getElementById("unitnumber").addEventListener("input", function (e) {
   e.target.value = e.target.value
     .replace(/[^\dA-Z]/g, "")
-    .replace(/(.{4})/g, "$1 ")
     .trim();
 });
+
+document.getElementById("month").addEventListener("input", function (e) {
+  e.target.value = e.target.value
+    .replace(/[^\dA-Z]/g, "")
+    .trim();
+});
+
+document.getElementById("day").addEventListener("input", function (e) {
+  e.target.value = e.target.value
+    .replace(/[^\dA-Z]/g, "")
+    .trim();
+});
+
+document.getElementById("year").addEventListener("input", function (e) {
+  e.target.value = e.target.value
+    .replace(/[^\dA-Z]/g, "")
+    .trim();
+});
+
+document.getElementById("securitynumber").addEventListener("input", function (e) {
+  e.target.value = e.target.value
+    .replace(/[^\dA-Z]/g, "")
+    .trim();
+});
+
 $(".one").hide();
 $("input:radio").change(function () {
   if ($(this).val() == "option1") {
@@ -72,6 +151,12 @@ document.getElementById("securityCode").addEventListener("input", function (e) {
     .replace(/[^\dA-Z]/g, "")
     .trim();
 });
+
+function initAutocomplete() {
+  autocomplete = new google.maps.places.Autocomplete(
+      /** @type {!HTMLInputElement} */(document.getElementById('address')),
+      {types: ['geocode']});
+}
 
 function movetoNext(current, nextFieldID) {
   console.log(current.value);
